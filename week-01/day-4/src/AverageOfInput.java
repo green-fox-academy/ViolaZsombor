@@ -10,7 +10,7 @@ public class AverageOfInput {
         int numb4=scanner.nextInt();
         int numb5=scanner.nextInt();
         int sum = (numb1 + numb2 + numb3 + numb4 + numb5);
-        float avg = ((numb1 + numb2 + numb3 + numb4 + numb5) / 5 ) ;
+        double avg = ((numb1 + (double)numb2 + numb3 + numb4 + numb5) / 5 ) ;
         System.out.println("Sum: " + sum +" , " + "Average:" + avg +"." );
 
     }
