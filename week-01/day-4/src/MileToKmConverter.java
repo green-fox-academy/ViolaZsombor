@@ -9,7 +9,7 @@ public class MileToKmConverter {
 
      double mile = scanner.nextDouble();
      double km = mile   * 1.6;
-        System.out.println("The distance " + mile + "you gave in mile is " + km + "in km");
+        System.out.println("The distance " + mile + " mile you gave is " + km + " in km");
 
 
 
