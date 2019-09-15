@@ -9,7 +9,9 @@ public class HelloUsergyak {
             String yourname = scanner.nextLine();
 
             System.out.println("Hello " + yourname + "!");
+        }
 
 
         }
-}
+
+
