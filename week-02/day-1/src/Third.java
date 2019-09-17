@@ -9,5 +9,8 @@ public class Third {
 
             // Print the second element of the array
             System.out.println("The third element is " + q[2]);
+
+
         }
     }
+
