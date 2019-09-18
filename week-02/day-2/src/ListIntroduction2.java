@@ -12,7 +12,7 @@ public class ListIntroduction2 {
         ArrayList<String> fruits2list = new ArrayList<>();
         for (String fruit : fruits.toArray(new String[0])) {
             fruits2list.add(fruit);
-            
+
             System.out.println(fruits.contains("Durian"));
 
         }
