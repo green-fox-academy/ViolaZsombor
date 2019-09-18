@@ -1,34 +1,28 @@
+
 import javax.swing.*;
 
 import java.awt.*;
-import java.util.Random;
 
-import static java.awt.image.ImageObserver.HEIGHT;
-import static java.awt.image.ImageObserver.WIDTH;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class CenterBoxFunction {
-
+public class PurpleSteps {
     public static void mainDraw(Graphics graphics) {
-        // create a function that draws one square and takes 2 parameters:
-        // the square size and the graphics
-        // and draws a square of that size to the center of the canvas.
-        // draw 3 squares with that function.
-        // avoid code duplication.
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
+        int x = 10;
+        int y = 10;
+        int size = 10;
 
-
-        for (int i = 0; i < 3; i++) {
-            int x = WIDTH / 2;
-            int y = HEIGHT / 2;
-            squaresfunction(x, y, graphics);
+        for (int i = 0; i < 6; i++)
+        {
+            graphics.setColor(Color.magenta);
+            graphics.fillRect(x, y, size, size);
+            graphics.setColor(Color.BLACK);
+            graphics.drawRect(x, y, size, size);
+            x += size;
+            y += size;
+            size += 10;
         }
-    }
-    private static void squaresfunction(int x, int y, Graphics graphics) {
-
-        Random random = new Random();
-
-        int squaresize = random.nextInt(180);
-        graphics.drawRect(x-(squaresize/2), y-(squaresize/2), squaresize, squaresize);
     }
 
     // Don't touch the code below
