@@ -24,7 +24,7 @@ public class HorizontalLines {
     }
 
     public static void drawfunction(int x, int y, Graphics graphics) {
-        graphics.drawLine(x, y, x+50, y);
+        graphics.drawLine(x, y, x-50, y);
 
 
 

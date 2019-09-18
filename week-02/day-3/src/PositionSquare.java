@@ -1,5 +1,3 @@
-import org.w3c.dom.css.RGBColor;
-
 import javax.swing.*;
 
 import java.awt.*;
@@ -7,27 +5,35 @@ import java.util.Random;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FourRectangles {
+public class PositionSquare {
 
     public static void mainDraw(Graphics graphics){
-        // draw four different size and color rectangles.
+        // create a function that draws one square and takes 3 parameters:
+        // the x and y coordinates of the square's top left corner and the graphics
+        // and draws a 50x50 square from that point.
+        // draw 3 squares with that function.
         // avoid code duplication.
         Random random = new Random();
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
 
-            int x = random.nextInt(250);
-            int y = random.nextInt(250);
-            int width = random.nextInt(100);
-            int height = random.nextInt(100);
-            int r = random.nextInt(255);
-            int g = random.nextInt(255);
-            int b = random.nextInt(255);
-
-            graphics.setColor(new Color(r, g, b));
-            graphics.fillRect(x, y, width, height);
+            int x = random.nextInt(270);
+            int y = random.nextInt(270);
+            drawfunction(x, y, graphics);
         }
+
+
     }
+
+    public static void drawfunction(int x, int y, Graphics graphics) {
+        graphics.drawRect(x, y, 50, 50);
+
+
+    }
+
+
+
+
 
     // Don't touch the code below
     static int WIDTH = 320;
@@ -51,4 +57,5 @@ public class FourRectangles {
             mainDraw(graphics);
         }
     }
+
 }
