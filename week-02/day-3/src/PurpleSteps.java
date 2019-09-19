@@ -13,15 +13,12 @@ public class PurpleSteps {
         int y = 10;
         int size = 10;
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 19; i++)
         {
             graphics.setColor(Color.magenta);
             graphics.fillRect(x, y, size, size);
-            graphics.setColor(Color.BLACK);
-            graphics.drawRect(x, y, size, size);
             x += size;
             y += size;
-            size += 10;
         }
     }
 

@@ -1,33 +1,34 @@
 import javax.swing.*;
+
 import java.awt.*;
-import java.util.Scanner;
+
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class RainbowBoxFunction {
+
     public static void mainDraw(Graphics graphics) {
         // Create a square drawing function that takes 3 parameters:
         // The square size, the fill color, graphics
         // and draws a square of that size and color to the center of the canvas.
         // Create a loop that fills the canvas with rainbow colored squares (red, orange, yellow, green, blue, indigo, violet).
+        Color[] colors = new Color[]{Color.red,Color.orange,Color.yellow,Color.green,Color.blue,
+                         new Color(103, 41, 140),new Color(230,130,238)};
 
-        // This is optional, it operates with the size of the squares
-
-        squareDrawer(graphics);
-
-    }
-
-    public static void squareDrawer(Graphics color) {
-        for (int j = 0; j < 7; j++) {
-            color.setColor(new Color(colorRandomizer(0), colorRandomizer(0), colorRandomizer(0)));
-            color.fillRect((j * 20), (j * 20), (WIDTH - (j * ( 20* 2))), (HEIGHT - (j * ( 20 * 2))));
+        int size=320;
+        for (int i = 0; i < colors.length; i++)
+        {
+            rainbowsquare(size, colors[i], graphics);
+            size -= 50;
         }
     }
 
-    public static int colorRandomizer(int rgb) {
-        return (int)(Math.random() * 256);
+    public static void rainbowsquare(int size, Color color, Graphics graphics)
+    {
+        graphics.setColor(color);
+        graphics.fillRect(160-size/2,160-size/2,size,size);
     }
 
-    // region Don't touch the code below
+    // Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 320;
 
@@ -49,5 +50,4 @@ public class RainbowBoxFunction {
             mainDraw(graphics);
         }
     }
-    // endregion
 }
