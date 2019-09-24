@@ -1,27 +1,31 @@
+
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+public class Checkerboard {
     public static void mainDraw(Graphics graphics) {
-        // Create a function that draws a single line and takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
 
-        int step=20;
-        for (int i = 0; i <= 320; i+=step) {
-            drawLineToCenter(i,0,graphics); //TOP
-            drawLineToCenter(i,HEIGHT,graphics); //BOTTOM
-            drawLineToCenter(0,i,graphics); //LEFT
-            drawLineToCenter(WIDTH,i,graphics);//RIGHT
+        graphics.setColor(Color.black);
+        graphics.fillRect(0,0,320,320);
+        // Fill the canvas with a checkerboard pattern.
+        for (int i = 0; i < 320; i += 80) {
+            for (int j = 0; j < 320; j += 80) {
+                graphics.setColor(Color.white);
+                graphics.fillRect(i, j, 40, 40);
+            }
         }
-    }
-    public static void drawLineToCenter(int x, int y, Graphics graphics) {
 
-        graphics.drawLine(x,y,WIDTH/2,HEIGHT/2);
+        for (int i = 40; i < 320; i += 80) {
+            for (int j = 40; j < 320; j += 80) {
+                graphics.setColor(Color.white);
+                graphics.fillRect(i, j, 40, 40);
+            }
+        }
+        graphics.setColor(Color.black);
+        graphics.drawRect(0,0,320,320);
     }
 
     // Don't touch the code below

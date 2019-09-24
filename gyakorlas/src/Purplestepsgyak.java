@@ -1,28 +1,31 @@
+
 import javax.swing.*;
 
 import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class FunctionToCenter {
+class PurpleStepsgyak {
     public static void mainDraw(Graphics graphics) {
-        // Create a function that draws a single line and takes 3 parameters:
-        // The x and y coordinates of the line's starting point and the graphics
-        // and draws a line from that point to the center of the canvas.
-        // Fill the canvas with lines from the edges, every 20 px, to the center.
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/assets/r3.png]
 
-        int step=20;
-        for (int i = 0; i <= 320; i+=step) {
-            drawLineToCenter(i,0,graphics); //TOP
-            drawLineToCenter(i,HEIGHT,graphics); //BOTTOM
-            drawLineToCenter(0,i,graphics); //LEFT
-            drawLineToCenter(WIDTH,i,graphics);//RIGHT
+        int x = 10;
+        int y =10;
+        int size = 10;
+        for (int i = 0; i <5 ; i++) {
+            graphics.setColor(Color.magenta);
+            graphics.fillRect(x,y,size,size);
+            graphics.setColor(Color.black);
+            graphics.drawRect(x,y,size,size);
+            x += size;
+            y += size;
+            size += 10;
+
         }
-    }
-    public static void drawLineToCenter(int x, int y, Graphics graphics) {
 
-        graphics.drawLine(x,y,WIDTH/2,HEIGHT/2);
-    }
+        }
+
 
     // Don't touch the code below
     static int WIDTH = 320;
