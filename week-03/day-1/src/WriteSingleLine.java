@@ -8,11 +8,11 @@ public class WriteSingleLine {
 
   public static void main(String[] args) {
     String file = "my-file";
-    writelinefunciton(file);
+    writeLineFunciton(file);
 
   }
 
-  public static void writelinefunciton(String input) {
+  public static void writeLineFunciton(String input) {
 
     List<String> content = new ArrayList<>();
     String myname = "Viola Zsombor";

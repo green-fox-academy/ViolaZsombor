@@ -17,7 +17,7 @@ public class WriteMultipleLines {
       content.add(word);
     }
     try {
-      Path filePath = Paths.get(path);
+      Path filePath = Paths.get(path); // Paths.get paranccsal kapok a Stringből Path objectet
       Files.write(filePath, content);
     } catch (IOException e) {
     }
