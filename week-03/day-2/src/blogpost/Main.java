@@ -8,5 +8,13 @@ public class Main {
     System.out.println(newBlog.title);
     System.out.println(newBlog.publicationDate);
     System.out.println(newBlog.text);
+
+    System.out.println("----------------------------");
+
+    BlogPost secondblog = new BlogPost();
+    System.out.println(secondblog.authorName = "Tim Urban");
+    System.out.println(secondblog.title = "Wait but why");
+    System.out.println(secondblog.text = "A popular long-form, stick-figure-illustrated blog about almost everything.");
+    System.out.println(secondblog.publicationDate = "2010.10.10");
   }
 }
