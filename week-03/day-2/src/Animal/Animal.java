@@ -9,6 +9,7 @@ public class Animal {
     hunger--;
   }
   public void drink () {
+
     thirst--;
   }
   public void play () {
