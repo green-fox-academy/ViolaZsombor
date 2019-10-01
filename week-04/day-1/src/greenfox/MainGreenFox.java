@@ -26,6 +26,8 @@ public class MainGreenFox {
 
     student.skipDays(3);
 
+
+
     for (int i = 0; i < 5; i++) {
       elon.hire();
     }
@@ -46,6 +48,10 @@ public class MainGreenFox {
     awesome.addMentor(gandhi);
     awesome.info();
   }
+
+  Student student = new Student("John", 20, "male","BME");
+  Student johnTheclone = student.clone();
+
 
 
 
