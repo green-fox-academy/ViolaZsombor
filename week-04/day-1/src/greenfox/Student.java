@@ -17,7 +17,7 @@ public class Student extends Person implements Cloneable {
     this.skippedDays = 0;
   }
 
-  Override
+
 
   public Student clone() {
     Student student = new Student(super.getName(), super.getAge(), super.getGender(),
