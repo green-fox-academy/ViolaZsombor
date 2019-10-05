@@ -13,7 +13,8 @@ public class Main {
     System.out.println(doubling(baseNum)); //1. feladat
     System.out.println(greet(al)); //2. feladat
     System.out.println(appendAFunc(typo)); // 3. feladat
-    System.out.println(sum(6)); // 4. feladat
+    System.out.println(sum(5)); // 4. feladat
+    System.out.println(factorio(5));
 
   }
 
@@ -44,13 +45,24 @@ public class Main {
 
   public static int sum (int inputnumber) {
     int sum = 0;
-    for (int i = 0; i <=inputnumber ; i++) {
-      sum+=i;
-
-    } return sum;
-
-
+    for (int i = 0; i <= inputnumber; i++) {
+      sum *= i;
+    }
+    return sum;
   }
+
+  // Create a function called `factorio`
+//   that returns it's input's factorial
+
+  public static int factorio (int inputnumber) {
+    int factorOfGivenNumber = 1;
+    for (int i = 1; i <= inputnumber; i++) {
+      factorOfGivenNumber *= i;
+    }
+    return factorOfGivenNumber;
+  }
+
+
 
 
 
