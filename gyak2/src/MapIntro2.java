@@ -17,11 +17,8 @@ public class MapIntro2 {
     map.put("978-1-60309-453-5", "Why Did We Trust Him?");
     for (String key : map.keySet()) {
       System.out.println(map.get(key));
-    }
-
-    if (map.containsKey("478-0-61159-424-8")) {
+    } if (map.containsKey("478-0-61159-424-8")) {
       System.out.println("it has x");
-
     } else {
       System.out.println("nope");
     }

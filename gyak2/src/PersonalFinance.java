@@ -19,38 +19,38 @@ public class PersonalFinance {
 
   }
 
-  public static int sumTheSpents(ArrayList arrayList) {
+  public static int sumTheSpents(ArrayList<Integer> arrayList) {
     int temp = 0;
     for (int i = 0; i < arrayList.size(); i++) {
-      temp += (int) arrayList.get(i);
+      temp += arrayList.get(i);
     }
     return temp;
   }
 
-  public static int maxspending(ArrayList list) {
+  public static int maxspending(ArrayList<Integer> list) {
     int max = 0;
     for (int i = 0; i < list.size(); i++) {
-      if ((int) list.get(i) > (int) list.get(max)) {
+      if (list.get(i) > list.get(max)) {
         max = i;
       }
     }
     return (int) list.get(max);
   }
 
-  public static int cheapestspend(ArrayList list) {
+  public static int cheapestspend(ArrayList<Integer> list) {
     int min = 0;
     for (int i = 0; i < list.size(); i++) {
-      if ((int) list.get(i) < (int) list.get(min)) {
+      if (list.get(i) < list.get(min)) {
         min = i;
       }
     }
     return (int) list.get(min);
   }
 
-  public static int averageSpending(ArrayList arrayList) {
+  public static int averageSpending(ArrayList<Integer> arrayList) {
     int temp = 0;
     for (int i = 0; i < arrayList.size(); i++) {
-      temp += (int) arrayList.get(i);
+      temp += arrayList.get(i);
     }
     return (temp / arrayList.size());
 
