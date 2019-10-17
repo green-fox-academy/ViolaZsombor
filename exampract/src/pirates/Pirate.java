@@ -39,14 +39,6 @@ public class Pirate {
         this.healthPoints = healthPoints;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHasWoodenLeg(boolean hasWoodenLeg) {
-        this.hasWoodenLeg = hasWoodenLeg;
-    }
-
     public void work() {
         this.amountOfGolds++;
         this.healthPoints--;
