@@ -5,25 +5,37 @@ import java.util.List;
 
 public class Ship {
     private List<Pirate> pirates = new ArrayList<>();
+    private int numberOfCaptain = 0;
+
+    public Ship(List<Pirate> pirates) {
+        this.pirates = pirates;
+    }
 
     public int getGolds() {
-        int allOfTheGolds = 0;
+        int totalGoldAmount = 0;
         for (int i = 0; i < pirates.size(); i++) {
-            allOfTheGolds += pirates.get(i).getAmountOfGold();
+            totalGoldAmount += pirates.get(i).getAmountOfGolds();
         }
-        return allOfTheGolds;
+        return totalGoldAmount;
+    }
+
+    public void addPirate(Pirate pirate) {
+        if (pirate.getClass() != Captain.class) {
+            pirates.add(pirate);
+        } else if (numberOfCaptain == 0) {
+            pirates.add(pirate);
+            numberOfCaptain++;
+        }
     }
 
     public List<String> getPoorPirates() {
-        List<String> names = new ArrayList<>();
+        List<String> pirateNames = new ArrayList<>();
         for (int i = 0; i < pirates.size(); i++) {
-            if ((pirates.get(i).isHasWoodenLeg() && (pirates.get(i).getAmountOfGold() < 15))) {
-                {
-                    names.add(pirates.get(i).getName());
-                }
+            if ((pirates.get(i).isHasWoodenLeg()) && (pirates.get(i).getAmountOfGolds() < 15)) {
+                pirateNames.add(pirates.get(i).getName());
             }
         }
-        return names;
+        return pirateNames;
     }
 
     public void lastDayOnTheShip() {
@@ -40,4 +52,5 @@ public class Ship {
         }
         lastDayOnTheShip();
     }
+
 }

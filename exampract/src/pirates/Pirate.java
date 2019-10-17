@@ -1,8 +1,7 @@
 package pirates;
 
 public class Pirate {
-
-    private int amountOfGold = 10;
+    private int amountOfGolds;
     private int healthPoints = 10;
     private String name;
     private boolean hasWoodenLeg = true;
@@ -10,35 +9,38 @@ public class Pirate {
     public Pirate() {
     }
 
-    public Pirate(int amountOfGold, int healthPoints, String name, boolean hasWoodenLeg) {
-        this.amountOfGold = amountOfGold;
-        this.healthPoints = healthPoints;
+    public Pirate(int amountOfGolds, String name, boolean hasWoodenLeg) {
+        this.amountOfGolds = amountOfGolds;
         this.name = name;
         this.hasWoodenLeg = hasWoodenLeg;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getAmountOfGold() {
-        return amountOfGold;
+    public int getAmountOfGolds() {
+        return amountOfGolds;
     }
 
     public int getHealthPoints() {
         return healthPoints;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public boolean isHasWoodenLeg() {
         return hasWoodenLeg;
     }
 
-    public void setAmountOfGold(int amountOfGold) {
-        this.amountOfGold = amountOfGold;
+    public void setAmountOfGolds(int amountOfGolds) {
+        this.amountOfGolds = amountOfGolds;
     }
 
     public void setHealthPoints(int healthPoints) {
         this.healthPoints = healthPoints;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public void setHasWoodenLeg(boolean hasWoodenLeg) {
@@ -46,7 +48,7 @@ public class Pirate {
     }
 
     public void work() {
-        this.amountOfGold++;
+        this.amountOfGolds++;
         this.healthPoints--;
     }
 
@@ -54,12 +56,11 @@ public class Pirate {
         this.healthPoints++;
     }
 
-
     public String toString() {
         if (hasWoodenLeg) {
-            return "Hello I'm " + this.name + "I have a wooden leg and 20 golds";
+            return ("Hello I am " + this.name + ". I have a wooden leg and " + amountOfGolds + " golds.");
         } else {
-            return "Hello I'm " + this.name + "I still have my real legs and 20 golds.";
+            return ("Hello I am " + this.name + ". I still have my real legs and " + amountOfGolds + " golds.");
         }
     }
 }
