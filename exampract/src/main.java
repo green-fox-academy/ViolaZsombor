@@ -6,6 +6,8 @@ public class main {
 
         System.out.println(new Random().nextBoolean());
 
+
+
     }
 
 }
