@@ -3,6 +3,9 @@ package main;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -64,7 +67,9 @@ public class Main {
     System.out.println("----------------------------");
 
     //Exercise 7
-    List<String> cities = Arrays.asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS");
+    List<String> cities = Arrays
+        .asList("ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM",
+            "ABU DHABI", "PARIS");
     cities.stream()
         .filter(x -> x.startsWith("P"))
         .forEach(System.out::println);
@@ -73,12 +78,25 @@ public class Main {
 
     //Exercise 8
     List<Character> chars = Arrays.asList('J', 'o', 'c', 'k', 'e', 'y');
-    String resultof8 =chars.stream()
-        .map(String :: valueOf)
+    String resultof8 = chars.stream()
+        .map(x -> x.toString())
         .collect(Collectors.joining());
 
     System.out.println(resultof8);
+
+    System.out.println("----------------------------");
+
+    //Exercise 9
+    String examplefor9 = "Stream EXPREssion to find the uppercase ";
+    Map<Character, Long> charFrequency = examplefor9.chars()
+        .mapToObj(c -> (char) c)
+        .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+    System.out.println(charFrequency);
+
+
   }
+
+
 }
 
 
