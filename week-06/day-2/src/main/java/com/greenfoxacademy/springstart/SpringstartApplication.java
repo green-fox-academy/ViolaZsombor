@@ -1,4 +1,4 @@
-/*
+
 package com.greenfoxacademy.springstart;
 
 import org.springframework.boot.SpringApplication;
@@ -12,4 +12,4 @@ public class SpringstartApplication {
   }
 
 }
-*/
+

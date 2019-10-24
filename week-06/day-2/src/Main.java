@@ -1,4 +1,4 @@
-package main;
+package com.greenfoxacademy.springstart;
 
 import java.util.ArrayList;
 import java.util.Arrays;
