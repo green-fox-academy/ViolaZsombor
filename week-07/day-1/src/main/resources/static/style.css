@@ -3,7 +3,8 @@ body {
 }
 
 
-table th, td{
+table th, td, tr{
+  border-collapse: collapse;
   border: black 2px solid;
   background-color: #dfff54;
   width: 80px;
