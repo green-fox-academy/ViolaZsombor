@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My shop</title>
+</head>
+
+<body>
+
+<h1>My shooop</h1>
+
+
+<a href="/">Show all</a>
+<!-- th:action="@{'/nutritionStore?name=' + ${name}}" -->
+<form th:action="@{/filtered}" th:method="post">
+  <label>Show filtered:</label><br>
+  <input type="number" name="quantity" required>
+  <input type="submit" text="Submit">
+</form>
+
+<br>
+<table>
+  <thead>
+  <tr>
+    <td>Id</td>
+    <td>Name</td>
+    <td>Quantity</td>
+    <td>Price</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="item : ${items}">
+    <td th:text="${item.getId()}"></td>
+    <td th:text="${item.getName()}"></td>
+    <td th:text="${item.getQuantity()}"></td>
+    <td th:text="${item.getPrice()}"></td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="/add">Add new</a>
+
+</body>
+
+</html>
