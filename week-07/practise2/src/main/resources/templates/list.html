@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Animal Type</th>
+    <th>Balance</th>
+    <th>Index</th>
+    <th>Is a king?</th>
+    <th>What kind of guy?</th>
+  </tr>
+  <tr th:each="list:${listofanimals}">
+    <td th:utext="${list.getName()}"></td>
+    <td th:utext="${list.getAnimalType()}"></td>
+    <td th:utext="${list.getBalance()}"></td>
+    <td th:utext="${listStat.index}"></td>
+    <div th:switch="${list.isKing()}">
+      <td th:case="true" style=color:blue>It is a king</td>
+      <td th:case="false">Not a king</td>
+    </div>
+    <div th:switch="${list.isBadGuy()}">
+      <td th:case="true" >Bad Guy</td>
+      <td th:case="false">Good Guy</td>
+    </div>
+
+  </tr>
+</table>
+
+<form class="raise" action="/addmoney" method="POST">
+  <input type="text" name="name" placeholder="name">
+  <button>submit</button>
+</form>
+</body>
+</html>
