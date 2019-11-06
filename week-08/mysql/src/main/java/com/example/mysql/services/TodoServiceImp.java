@@ -1,7 +1,8 @@
-package com.example.crud.services;
+package com.example.mysql.services;
 
-import com.example.crud.models.Todo;
-import com.example.crud.repositories.TodoRepositories;
+
+import com.example.mysql.models.Todo;
+import com.example.mysql.repositories.TodoRepositories;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class TodoServiceImp implements IntTodoService {
   public Todo findById(long id) {
     return todoRepositories.findById(id).orElse(null);
   }
+
 
   @Override
   public void save(Todo todo) {

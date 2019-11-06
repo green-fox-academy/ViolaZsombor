@@ -1,6 +1,7 @@
-package com.example.crud.repositories;
+package com.example.mysql.repositories;
 
-import com.example.crud.models.Todo;
+
+import com.example.mysql.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

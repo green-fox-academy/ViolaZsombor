@@ -1,6 +1,7 @@
-package com.example.crud.services;
+package com.example.mysql.services;
 
-import com.example.crud.models.Todo;
+
+import com.example.mysql.models.Todo;
 import java.util.List;
 
 public interface IntTodoService {

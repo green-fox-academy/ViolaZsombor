@@ -1,12 +1,10 @@
-package com.example.crud.models;
+package com.example.mysql.models;
 
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
 public class Todo {
@@ -21,8 +19,11 @@ public class Todo {
   public Todo() {
   }
 
-  public Todo(long id, String title, boolean urgent, boolean done) {
-    this.id = id;
+  public Todo(String title) {
+    this.title = title;
+  }
+
+  public Todo(String title, boolean urgent, boolean done) {
     this.title = title;
     this.urgent = urgent;
     this.done = done;
