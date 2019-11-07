@@ -26,11 +26,11 @@ public class MysqlApplication implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
     Todo todo = new Todo("matekozni");
-   /* todoRepositories.save(new Todo("olvasni", false,false));
+    todoRepositories.save(new Todo("olvasni", false,false));
     todoRepositories.save(new Todo("nevetni sokat", true,true));
     todoRepositories.save(new Todo("úszni", true,false));
     todoRepositories.save(new Todo("kalózkodni", false,false));
-    todoRepositories.save(todo);*/
+    todoRepositories.save(todo);
 
   }
 }
