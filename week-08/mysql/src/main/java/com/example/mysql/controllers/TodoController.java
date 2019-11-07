@@ -1,6 +1,5 @@
 package com.example.mysql.controllers;
 
-
 import com.example.mysql.models.Todo;
 import com.example.mysql.services.IntTodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +26,6 @@ public class TodoController {
   @GetMapping(value = {"/", "/list"})
   public String list(Model model, @RequestParam(required = false) Boolean isActive,
       @RequestParam(required = false) Boolean urgent) {
-    Iterable<Todo> todo = intTodoService.getFilteredData(urgent, isActive);
     model.addAttribute("todos", intTodoService.getFilteredData(urgent, isActive));
     return "todolist";
   }
@@ -48,5 +47,22 @@ public class TodoController {
     return "redirect:/todo/";
   }
 
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable(name = "id") Long id) {
+    intTodoService.delete(id);
+    return "redirect:/todo/list";
+  }
 
+  @GetMapping(value = "/edit/{id}")
+  public String edit(Model model, @PathVariable(name = "id") Long id) {
+    model.addAttribute("editedTodo", intTodoService.findcd ById(id));
+    return "edit";
+  }
+
+  @PostMapping(value = "/{editedId}/edit")
+  public String edit(@ModelAttribute Todo edited , @PathVariable(name = "editedId") Long newId) {
+    edited.setId(newId);
+    intTodoService.save(edited);
+    return "redirect:/todo/list";
+  }
 }

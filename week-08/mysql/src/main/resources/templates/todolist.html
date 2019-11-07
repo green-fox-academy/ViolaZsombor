@@ -25,8 +25,10 @@
   <tr>
     <th>ID</th>
     <th>Action</th>
-    <th>Done</th>
     <th>Urgent</th>
+    <th>Done</th>
+    <th>Delete</th>
+    <th>Edit</th>
   </tr>
   </thead>
   <tbody>
@@ -35,9 +37,10 @@
     <td th:text="${todo.getTitle()}"></td>
     <td th:text="${todo.isUrgent()}"></td>
     <td th:text="${todo.isDone()}"></td>
+    <td><a th:href="@{'/todo/delete/' + ${todo.id}}">delete</a></td>
+    <td><a th:href="@{'/todo/edit/' + ${todo.id}}">edit</a></td>
   </tr>
   </tbody>
 </table>
-
 </body>
 </html>

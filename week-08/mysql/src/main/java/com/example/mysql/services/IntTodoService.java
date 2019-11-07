@@ -15,4 +15,5 @@ public interface IntTodoService {
   List<Todo> findAllByUrgentAndDone(Boolean urgent, Boolean active);
   Iterable<Todo> getFilteredData(Boolean urgent, Boolean active);
   List<Todo> searched(String string);
+
 }
