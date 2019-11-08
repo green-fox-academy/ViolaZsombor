@@ -37,7 +37,7 @@ public class TodoController {
   }
 
   @GetMapping(value = "/add")
-  public String addGet(@ModelAttribute(name = "todo") Todo todo) {
+  public String addGet(@ModelAttribute Todo todo) {
     return "add";
   }
 

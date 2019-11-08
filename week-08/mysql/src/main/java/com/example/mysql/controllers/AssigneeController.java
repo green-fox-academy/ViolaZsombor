@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping(value = "/assignee") // az összes többi endpointot az itt megadott value előzi meg az url sávban
+@RequestMapping(value = "/assignee")
+// az összes többi endpointot az itt megadott value előzi meg az url sávban
 public class AssigneeController {
 
   private AssigneeInterfaceService assigneeInterfaceService;
@@ -24,19 +25,36 @@ public class AssigneeController {
   }
 
   @GetMapping(value = "/list")
-  public String assigneeList(Model model){
+  public String assigneeList(Model model) {
     model.addAttribute("assignees", assigneeInterfaceService.findAll());
     return "assigneelist";
   }
 
+  @GetMapping(value = "/add")
+  public String add(@ModelAttribute Assignee assignee) {
+    return "addassignee";
+  }
+
+  @PostMapping(value = "/add")
+  public String addPost(@ModelAttribute Assignee assignee) {
+    assigneeInterfaceService.save(assignee);
+    return "redirect:/assignee/list";
+  }
+
+  @GetMapping(value = "/delete/{id}")
+  public String delete(@PathVariable(name = "id") Long id) {
+    assigneeInterfaceService.delete(id);
+    return "redirect:/assignee/list";
+  }
+
   @GetMapping(value = "/edit/{id}")
-  public String editAssignees(Model model, @PathVariable(name="id") Long id){
-    model.addAttribute("editedAssignee", assigneeInterfaceService.findById(id) );
+  public String editAssignees(Model model, @PathVariable(name = "id") Long id) {
+    model.addAttribute("editedAssignee", assigneeInterfaceService.findById(id));
     return "editList";
   }
 
   @PostMapping(value = "/{editedId}/edit")
-  public String edit(@ModelAttribute Assignee edited , @PathVariable(name = "editedId") Long newId) {
+  public String edit(@ModelAttribute Assignee edited, @PathVariable(name = "editedId") Long newId) {
     edited.setId(newId);
     assigneeInterfaceService.save(edited);
     return "redirect:/assignee/list";
