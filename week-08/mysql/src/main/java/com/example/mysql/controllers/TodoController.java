@@ -55,7 +55,7 @@ public class TodoController {
 
   @GetMapping(value = "/edit/{id}")
   public String edit(Model model, @PathVariable(name = "id") Long id) {
-    model.addAttribute("editedTodo", intTodoService.findcd ById(id));
+    model.addAttribute("editedTodo", intTodoService.findById(id));
     return "edit";
   }
 

@@ -62,7 +62,6 @@ public class TodoServiceImp implements IntTodoService {
     } else  {
       return todoRepositories.findAllByUrgentAndDone(urgent, !active);
     }
-
   }
 
   @Override
