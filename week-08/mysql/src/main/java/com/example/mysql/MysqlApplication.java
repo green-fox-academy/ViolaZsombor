@@ -41,6 +41,11 @@ public class MysqlApplication implements CommandLineRunner {
     assigneeRepository.save(new Assignee("Jockey","jockey@dallas.com"));
     assigneeRepository.save(new Assignee("Bobby","bobby@dallas.com"));
 
+    Assignee assignee = new Assignee("Jimmy", "jimmy@dallas.com");
+
+
+    assignee.addTodo(todo);
+
 
 
   }

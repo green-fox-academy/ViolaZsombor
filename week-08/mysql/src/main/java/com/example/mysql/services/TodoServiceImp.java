@@ -19,10 +19,8 @@ public class TodoServiceImp implements IntTodoService {
   }
 
   @Override
-  public List<Todo> findAll() {
-    List<Todo> todoList = new ArrayList<>();
-    todoRepositories.findAll().forEach(todo -> todoList.add(todo));
-    return todoList;
+  public void add(Todo todo) {
+    todoRepositories.save(todo);
   }
 
   @Override
@@ -30,6 +28,12 @@ public class TodoServiceImp implements IntTodoService {
     return todoRepositories.findById(id).orElse(null);
   }
 
+  @Override
+  public List<Todo> findAll() {
+    List<Todo> todoList = new ArrayList<>();
+    todoRepositories.findAll().forEach(todo -> todoList.add(todo));
+    return todoList;
+  }
 
   @Override
   public void save(Todo todo) {
@@ -49,7 +53,6 @@ public class TodoServiceImp implements IntTodoService {
       return todoRepositories.findAll();
     }
   }
-
   @Override
   public List<Todo> findAllByUrgentAndDone(Boolean urgent, Boolean active) {
     return todoRepositories.findAllByUrgentAndDone(urgent, !active);
